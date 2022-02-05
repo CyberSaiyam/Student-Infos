@@ -1,0 +1,17 @@
+{% extends 'layout.html' %} {% block main %} {% for profile in profiles %}
+<h4 class="indexh2" style="margin:10px;">{{profile.Name.upper()}}'s PROFILE</h4>
+<div class="profile" style="margin:10px;">
+    <hr>
+    <div>
+        <h4>Student Name: {{profile.Name}}</h4>
+        <h4>Roll no: {{profile.Id}}</h4>
+        <h4>Email: {{profile.Email}}</h4>
+        <h4>Phone Number: {{profile.Phone}}</h4>
+        <h4>Gender: {{profile.Gender}}</h4>
+        <h4>Address: {{profile.Address}}</h4>
+        <h4>Course of Study: {{profile.Department}}</h4>
+        <h4>Year of College: {{profile.CollegeYear}}</h4>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

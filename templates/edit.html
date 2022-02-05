@@ -1,0 +1,47 @@
+{% extends 'layout.html' %} {% block main %}
+<br> {% for profile in profiles %}
+<div class="edit" style="margin:10px;">
+    <h4 class="indexh2">Update {{profile.Name}} details</h4>
+
+    <form action=" /edit/<Id>" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="studentname" placeholder="Student Name" value="{{profile.Name}}" type="text" required>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="email" placeholder="Email" value="{{profile.Email}}" type="email" required>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="phonenumber" value="{{profile.Phone}}" placeholder="Phone Number" type="tel" required>
+        </div>
+        <div class="form-group">
+            <select name="gender" class="form-control">
+        <option value="{{profile.Gender}}" selected disabled>Gender</option>
+            {% for gender in genders %}<option value="{{gender}}">{{gender}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="address" value="{{profile.Address}}" placeholder="Address" type="text" required>
+        </div>
+        <div class="form-group">
+            <select name="courseofstudy" class="form-control">
+            <option value="{{profile.Department}}" selected disabled>Select Course</option>
+            {% for major in majors %}
+            <option value="{{major}}">{{major}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        <div class="form-group">
+            <select name="yearofstudy" class="form-control">
+            <option value="{{profile.CollegeYear}}" selected disabled>Year of College</option>
+            {% for yoc in yoc %}
+            <option value="{{yoc}}">{{yoc}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        <div class="text-center">
+            <button class="large btn btn-primary btn-lg" type="submit">Update</button>
+        </div>
+    </form>
+</div>
+{% endfor %} {% endblock %}

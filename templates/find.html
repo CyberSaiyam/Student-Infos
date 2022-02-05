@@ -1,0 +1,15 @@
+{% extends 'layout.html' %} {% block main %}
+
+<h4 class="indexh2">FIND STUDENT</h4>
+
+<div class="content">
+    <form action="/search" method="GET">
+        <div class="d-flex ">
+            <input class="form-control me-2 w-75" type="search" placeholder="Enter name" name="studentname" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </div>
+    </form>
+
+</div>
+
+{% endblock %}

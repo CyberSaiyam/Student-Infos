@@ -1,0 +1,19 @@
+{% extends 'layout.html' %} {% block main %}
+
+<h4 class="indexh2">STUDENTS LIST</h4>
+<div class="indexcontent">
+    {% for student in students%}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{student.Name}}</h5>
+            <p class="card-text">Student Id: {{student.Id}}</p>
+            <p class="card-text">Department of {{student.Department}}</p>
+            <a href="/profile/{{student.Id}}" class="btn btn-primary">View Profile</a>
+            <a href="/edit/{{student.Id}}">Edit</a>
+            <a href=" /delete/{{student.Id}} " onclick=" return confirm( 'Are You Sure To Delete {{student.Name}} details ?') ">Delete</a>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock %}
