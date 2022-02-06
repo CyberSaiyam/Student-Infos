@@ -1,5 +1,3 @@
-# OM
-# Jai Shree Ram
 # Student Information Portal
 
 import os
